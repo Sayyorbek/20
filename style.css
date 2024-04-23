@@ -3,22 +3,24 @@
   padding: 0;
   box-sizing: border-box;
 }
-html{
-  overflow-y: scroll;
-  transition: all .5s ease;
-}
 .cont_in {
-  background-color: orange;
 }
 .container {
   max-width: 1400px;
   margin: auto;
 }
 .navbar {
+  background-color: rgb(255, 102, 0);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px;
+  /* border-bottom: 2px solid #000; */
+  padding: 18px 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
 }
 h1 {
   color: white;
@@ -34,6 +36,7 @@ nav > ul {
   cursor: pointer;
 }
 ul > li {
+  position: relative;
   font-size: 20px;
   font-weight: 400;
 }
@@ -41,6 +44,23 @@ li > a{
   text-decoration: none;
   color: #000;
 }
+
+li > a::before{
+  content:'';   
+  position: absolute;
+  top: 23px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: .5s;
+
+}
+li > a:hover::before{
+  width: 100%;
+
+}
+
 ul > button {
   font-size: 18px;
   font-weight: 600;
@@ -51,8 +71,14 @@ ul > button {
   color: rgb(229, 149, 0);
   box-shadow: 0px 2px 5px rgb(83, 82, 82);
   cursor: pointer;
+  transition: all .4s ease;
+
+}
+ul > button:hover {
+  transform: scale(1.1);
 }
 .main {
+  margin-top: 68px;
   border: 55px solid #000;
   background: url(assets/img/Rectangle\ 6.png);
   background-color: #000;
@@ -86,11 +112,12 @@ ul > button {
 
 .section {
   background-color: orange;
+  padding-top: 40px;
 }
 .container_section {
   max-width: 1400px;
   margin: auto;
-  padding: 30px 18px;
+  padding: 35px 18px;
   display: flex;
 }
 .left_hero {
@@ -123,6 +150,11 @@ ul > button {
   color: orange;
   font-weight: 600;
   cursor: pointer;
+  transition: all .4s ease;
+}
+
+.btn:hover {
+  transform: scale(1.2);
 }
 
 .right_hero {
@@ -132,8 +164,8 @@ ul > button {
 .section_img_1,
 .section_img_2 {
   border-radius: 20px;
-  width: 400px;
-  height: 550px;
+  width: 380px;
+  height: 500px;
   object-fit: cover;
   cursor: pointer;
 }
@@ -141,6 +173,15 @@ ul > button {
   position: relative;
   right: -250px;
   top: 100px;
+  transition: all .7s ease;
+}
+
+.section_img_1:hover {
+  transform: scale(1.05);
+}
+
+.section_img_1:hover.section_img_2{
+  transform: scale(1.05);
 }
 
 .content {
@@ -152,6 +193,7 @@ ul > button {
   text-align: center;
   font-size: 50px;
   cursor: pointer;
+  transition: all .4s ease;
 }
 .content_bar {
   display: flex;
@@ -174,6 +216,10 @@ menu {
   align-items: center;
   max-width: 1000px;
   margin: auto;
+  transition: all .4s ease;
+}
+menu:hover{
+  transform: scale(1.1);
 }
 .content_element_1 {
   display: flex;
@@ -205,7 +251,13 @@ p {
   color: orange;
   margin-top: 50px;
   cursor: pointer;
+  transition: all .4s ease;
 }
+
+.btn_bar:hover{
+  transform: scale(1.1);
+}
+
 footer {
   background: url(assets/img/Rectangle\ 20.png);
   background-color: #000;
